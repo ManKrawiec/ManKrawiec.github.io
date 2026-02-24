@@ -1,1 +1,113 @@
-for test
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maks Site</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1e1e2f);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #00ffcc;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ffcc;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: #00ffcc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: #00bfa6;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0,0,0,0.6);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Maks Dev</h1>
+    <nav>
+        <a href="#">Strona główna</a>
+        <a href="#">O mnie</a>
+        <a href="#">Projekty</a>
+        <a href="#">Kontakt</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h2>Witam na mojej stronie 🚀</h2>
+        <p>Tworzę projekty, eksperymentuję z Linuxem i programuję.</p>
+        <br>
+        <button onclick="alert('Dzięki za kliknięcie 😎')">Kliknij mnie</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 Maks Krawczyk | Strona zrobiona w HTML & CSS
+</footer>
+
+</body>
+</html>
