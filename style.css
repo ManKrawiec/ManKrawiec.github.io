@@ -96,19 +96,27 @@ nav a.active::after {
 
 /* === HERO === */
 .hero {
-    text-align: center;
-    padding: 140px 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 120px 8% 100px;
     position: relative;
 }
 
+.hero-text {
+    text-align: left;
+    max-width: 550px;
+}
+
 .hero-avatar {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid rgba(0, 245, 212, 0.3);
-    margin-bottom: 24px;
     box-shadow: 0 8px 30px rgba(0, 245, 212, 0.15);
+    flex-shrink: 0;
 }
 
 .hero::before {
@@ -139,8 +147,22 @@ nav a.active::after {
     font-size: 1.15rem;
     color: rgba(255, 255, 255, 0.6);
     max-width: 550px;
-    margin: 0 auto;
+    margin: 0;
     line-height: 1.7;
+}
+
+/* Hero without avatar (centered) */
+.hero.centered {
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero.centered .hero-text {
+    text-align: center;
+}
+
+.hero.centered .buttons {
+    justify-content: center;
 }
 
 /* === BUTTONS === */
@@ -647,11 +669,26 @@ footer a:hover {
     }
 
     .hero {
+        flex-direction: column;
         padding: 100px 16px 60px;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-avatar {
+        width: 130px;
+        height: 130px;
     }
 
     .hero h1 {
         font-size: 2.2rem;
+    }
+
+    .buttons {
+        justify-content: center;
     }
 
     .section {
