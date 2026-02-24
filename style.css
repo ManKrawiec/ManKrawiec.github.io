@@ -424,6 +424,204 @@ footer a:hover {
     opacity: 0;
 }
 
+/* === IMAGE CARDS === */
+.image-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.35s ease;
+}
+
+.image-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 245, 212, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.image-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-card .card-body {
+    padding: 24px;
+}
+
+.image-card h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.image-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+}
+
+.image-card .tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-right: 6px;
+    background: rgba(0, 245, 212, 0.1);
+    color: #00f5d4;
+    border: 1px solid rgba(0, 245, 212, 0.2);
+}
+
+.tag.purple {
+    background: rgba(123, 97, 255, 0.1);
+    color: #7b61ff;
+    border-color: rgba(123, 97, 255, 0.2);
+}
+
+.tag.orange {
+    background: rgba(255, 165, 0, 0.1);
+    color: #ffa500;
+    border-color: rgba(255, 165, 0, 0.2);
+}
+
+/* === IMAGE PLACEHOLDER (gradient banners) === */
+.img-placeholder {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+}
+
+.img-placeholder.warthunder {
+    background: linear-gradient(135deg, #1a3a2a, #2d5a3a, #1a4a3a);
+}
+
+.img-placeholder.cod {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #3a2a1a);
+}
+
+.img-placeholder.battlefield {
+    background: linear-gradient(135deg, #1a2a3a, #2a3a5a, #1a2a4a);
+}
+
+.img-placeholder.linexin {
+    background: linear-gradient(135deg, #2a1a3a, #3a2a4a, #1a1a3a);
+}
+
+.img-placeholder .placeholder-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: absolute;
+}
+
+/* === BUDDY / PARTNER SECTION === */
+.buddy-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buddy-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7b61ff, #00f5d4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.buddy-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.buddy-info p {
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.buddy-info a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 22px;
+    border-radius: 10px;
+    background: rgba(123, 97, 255, 0.15);
+    border: 1px solid rgba(123, 97, 255, 0.3);
+    color: #7b61ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.buddy-info a:hover {
+    background: rgba(123, 97, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* === QUOTE / HIGHLIGHT TEXT === */
+.highlight-text {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    position: relative;
+    padding: 0 20px;
+}
+
+.highlight-text::before {
+    content: '\201C';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    color: rgba(0, 245, 212, 0.15);
+    font-style: normal;
+    line-height: 1;
+}
+
+/* === FLAG / LOCATION === */
+.location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 16px;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     header {
