@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Sora:wght@400;500;600;700&display=swap');
+
 /* === RESET & BASE === */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -17,6 +19,18 @@ body {
     color: #e0e0e0;
     min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 245, 212, 0.06), transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 165, 0, 0.08), transparent 35%);
+    z-index: -1;
 }
 
 @keyframes gradientShift {
@@ -42,6 +56,7 @@ header {
 }
 
 .logo {
+    font-family: 'Space Grotesk', 'Sora', sans-serif;
     font-size: 1.8rem;
     font-weight: 800;
     background: linear-gradient(135deg, #00f5d4, #7b61ff);
@@ -49,6 +64,11 @@ header {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -0.5px;
+}
+
+header.scrolled {
+    background: rgba(15, 18, 34, 0.7);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 
 nav {
@@ -133,6 +153,7 @@ nav a.active::after {
 }
 
 .hero h1 {
+    font-family: 'Space Grotesk', 'Sora', sans-serif;
     font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 20px;
@@ -476,6 +497,12 @@ footer a:hover {
     height: 200px;
     object-fit: cover;
     display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+    filter: saturate(1.08);
 }
 
 .image-card .card-body {
@@ -547,6 +574,10 @@ footer a:hover {
     background: linear-gradient(135deg, #2a1a3a, #3a2a4a, #1a1a3a);
 }
 
+.img-placeholder.maxis {
+    background: linear-gradient(135deg, #14303a, #1e4855, #17373f);
+}
+
 .img-placeholder .placeholder-text {
     font-size: 1.4rem;
     font-weight: 700;
@@ -589,6 +620,21 @@ footer a:hover {
     flex-shrink: 0;
     object-fit: cover;
     border: 3px solid rgba(0, 245, 212, 0.3);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.buddy-section:hover .buddy-avatar {
+    transform: scale(1.04);
+    box-shadow: 0 8px 24px rgba(0, 245, 212, 0.2);
+}
+
+.hero-avatar {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero-avatar:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 34px rgba(0, 245, 212, 0.22);
 }
 
 .buddy-info h3 {
@@ -672,6 +718,8 @@ footer a:hover {
 
     nav {
         gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .hero {

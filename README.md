@@ -1,28 +1,67 @@
-# ManKrawiec – Personal Brand Website
+# ManKrawiec.github.io
 
-This repository contains the source code for my personal website.
+Personal portfolio and community hub for **ManKrawiec**.
+The website is focused on gaming + creator content, with a custom visual style and zero frameworks.
 
-## 💡 Vision
+## Live Website
+- GitHub Pages: <https://mankrawiec.github.io/>
 
-Combining:
-- Content creation
-- Programming
-- Community building
+## What This Project Includes
+- Responsive multi-page portfolio (`Home`, `About`, `Content`, `Community`)
+- Custom animated UI (gradient background, reveal animations, hover interactions)
+- Gaming/content sections with image cards and project highlights
+- Social/community links (Twitch, Discord, GitHub)
+- Image error fallback in JavaScript (broken image -> generated SVG placeholder)
 
-into one central platform.
+## Tech Stack
+- `HTML5`
+- `CSS3` (custom styling and animations)
+- `Vanilla JavaScript`
+- `GitHub Pages` for hosting
 
-## 🧠 Currently Working On
+## Project Structure
+```text
+.
+├── index.html        # Home page
+├── about.html        # About page
+├── content.html      # Games/content/projects
+├── contact.html      # Community / social links
+├── style.css         # Global styles + responsive layout
+├── stript.js         # Scroll reveal, sticky header state, image fallback
+└── img/              # Local images used across pages
+```
 
-- Improving website UI/UX
-- Expanding streaming content
-- Developing coding projects
+## Run Locally
+```bash
+git clone https://github.com/ManKrawiec/ManKrawiec.github.io.git
+cd ManKrawiec.github.io
+```
+Then open `index.html` in your browser.
 
-## 📬 Connect With Me
+## Customization Notes
+- Update texts directly in `*.html` files.
+- Global design tokens and sections are in `style.css`.
+- Frontend interactions are in `stript.js`.
+- To replace visuals, drop new assets into `img/` and update `src` paths in HTML.
 
-Twitch → https://www.twitch.tv/mankrawiec  
-GitHub → https://github.com/ManKrawiec  
-Discord → https://discord.gg/8MzyPqCg6n
+## Recent Improvements
+- Better visual polish (typography, hover motion, background depth)
+- Performance/UX image attributes (`loading`, `decoding`, `fetchpriority`)
+- Safer external links (`rel="noopener noreferrer"`)
+- Placeholder class consistency fix (`maxis`)
+- Fallback image renderer in JS for unavailable images
 
----
+## Roadmap
+- Add dedicated projects page with filters
+- Add stream schedule section
+- Add Polish + English language switch
+- Add simple contact form (static form endpoint)
 
-Built with passion and consistency.
+## Author
+- GitHub: <https://github.com/ManKrawiec>
+- Twitch: <https://www.twitch.tv/mankrawiec>
+- Discord: <https://discord.gg/8MzyPqCg6n>
+
+## License
+This repository currently has no explicit license file.
+If you want, I can add a license (`MIT` is the common default) in a next commit.
