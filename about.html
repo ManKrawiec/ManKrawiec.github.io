@@ -12,19 +12,20 @@
 <header>
 <div class="logo">ManKrawiec</div>
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html" class="active">About</a>
-<a href="content.html">Content</a>
-<a href="contact.html">Community</a>
+<a href="index.html" data-i18n="nav_home">Home</a>
+<a href="about.html" class="active" data-i18n="nav_about">About</a>
+<a href="content.html" data-i18n="nav_content">Content</a>
+<a href="contact.html" data-i18n="nav_community">Community</a>
+<button class="lang-toggle" id="lang-toggle" type="button">PL</button>
 </nav>
 </header>
 
 <section class="hero">
 <div class="hero-text">
-<h1 class="fade-in">About Me</h1>
-<p class="fade-in-delay">Gamer, streamer and creator from Poland — I live for games, code and community.</p>
+<h1 class="fade-in" data-i18n="about_hero_title">About Me</h1>
+<p class="fade-in-delay" data-i18n="about_hero_sub">Gamer, streamer and creator from Poland — I live for games, code and community.</p>
 <div class="fade-in-delay-2">
-<span class="location">🇵🇱 Poland</span>
+<span class="location" data-i18n="about_location">🇵🇱 Poland</span>
 </div>
 </div>
 <img src="img/ManKrawiec.jpeg" alt="ManKrawiec" class="hero-avatar fade-in-delay" loading="eager" decoding="async" fetchpriority="high">
@@ -32,10 +33,9 @@
 
 <section class="section">
 <p class="about-text reveal">
-Hey! I'm ManKrawiec — a gamer and creator from Poland. I stream on Twitch daily,
-mainly playing War Thunder, but I also love Call of Duty and Battlefield.
-In my free time I code, tinker with Linux and build various projects — from websites to my own Linux distribution, Maxis-Linux.
-I often play with my streaming partner <a href="https://www.twitch.tv/safigy" style="color:#7b61ff">Safigy</a> — come join the streams!
+<span data-i18n="about_intro_1">Hey! I'm ManKrawiec — a gamer and creator from Poland. I stream on Twitch daily, mainly playing War Thunder, but I also love Call of Duty and Battlefield. In my free time I code, tinker with Linux and build various projects — from websites to my own Linux distribution, Maxis-Linux. I often play with my streaming partner</span>
+<a href="https://www.twitch.tv/safigy" style="color:#7b61ff">Safigy</a>
+<span data-i18n="about_intro_2"> — come join the streams!</span>
 </p>
 
 <hr class="divider reveal">
@@ -43,31 +43,31 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 <div class="stats reveal">
 <div class="stat">
 <div class="stat-number">🎮</div>
-<div class="stat-label">Streamer</div>
+<div class="stat-label" data-i18n="about_stat_streamer">Streamer</div>
 </div>
 <div class="stat">
 <div class="stat-number">💻</div>
-<div class="stat-label">Developer</div>
+<div class="stat-label" data-i18n="about_stat_dev">Developer</div>
 </div>
 <div class="stat">
 <div class="stat-number">🐧</div>
-<div class="stat-label">Arch Linux User</div>
+<div class="stat-label" data-i18n="about_stat_arch">Arch Linux User</div>
 </div>
 <div class="stat">
 <div class="stat-number">🇵🇱</div>
-<div class="stat-label">Poland</div>
+<div class="stat-label" data-i18n="about_stat_poland">Poland</div>
 </div>
 </div>
 
-<h2 class="section-title reveal">My Games</h2>
+<h2 class="section-title reveal" data-i18n="about_games_title">My Games</h2>
 <div class="cards">
 
 <div class="image-card reveal">
 <img src="img/warthunder.jpg" alt="War Thunder" loading="lazy" decoding="async">
 <div class="card-body">
 <h3>War Thunder</h3>
-<p>My main game — tanks, planes and ships. The grind never ends, but the satisfaction of a good frag is priceless.</p>
-<span class="tag">Main Game</span>
+<p data-i18n="about_wt_desc">My main game — tanks, planes and ships. The grind never ends, but the satisfaction of a good frag is priceless.</p>
+<span class="tag" data-i18n="tag_main_game">Main Game</span>
 <span class="tag orange">MMO</span>
 </div>
 </div>
@@ -76,9 +76,9 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 <img src="img/cod.webp" alt="Call of Duty" loading="lazy" decoding="async">
 <div class="card-body">
 <h3>Call of Duty</h3>
-<p>A true CoD fan — from the classics to the latest entries. Fast action, fast frags.</p>
+<p data-i18n="about_cod_desc">A true CoD fan — from the classics to the latest entries. Fast action, fast frags.</p>
 <span class="tag purple">FPS</span>
-<span class="tag">Favorite Series</span>
+<span class="tag" data-i18n="tag_favorite_series">Favorite Series</span>
 </div>
 </div>
 
@@ -86,9 +86,9 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 <img src="img/battlefield.webp" alt="Battlefield" loading="lazy" decoding="async">
 <div class="card-body">
 <h3>Battlefield</h3>
-<p>Massive battles, vehicles, destruction — Battlefield is the game you can always count on for epic moments.</p>
+<p data-i18n="about_bf_desc">Massive battles, vehicles, destruction — Battlefield is the game you can always count on for epic moments.</p>
 <span class="tag purple">FPS</span>
-<span class="tag orange">Large Scale</span>
+<span class="tag orange" data-i18n="tag_large_scale">Large Scale</span>
 </div>
 </div>
 
@@ -96,7 +96,7 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 </section>
 
 <section class="section">
-<h2 class="section-title reveal">Projects</h2>
+<h2 class="section-title reveal" data-i18n="about_projects_title">Projects</h2>
 <hr class="divider reveal">
 <div class="cards">
 
@@ -107,31 +107,31 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 </div>
 <div class="card-body">
 <h3>Maxis-Linux</h3>
-<p>My own Linux distribution project. It's not perfect yet, but it was a massive learning experience — from bootloader to desktop.</p>
-<span class="tag">Linux Distro</span>
-<span class="tag purple">In Progress</span>
+<p data-i18n="about_maxis_desc">My own Linux distribution project. It's not perfect yet, but it was a massive learning experience — from bootloader to desktop.</p>
+<span class="tag" data-i18n="tag_linux_distro">Linux Distro</span>
+<span class="tag purple" data-i18n="tag_in_progress">In Progress</span>
 </div>
 </div>
 
 <div class="card reveal">
 <span class="card-icon">🌐</span>
-<h3>This Website</h3>
-<p>My personal website — written from scratch in HTML, CSS and JS. Hosted on GitHub Pages.</p>
-<span class="tag">Web</span>
+<h3 data-i18n="about_site_title">This Website</h3>
+<p data-i18n="about_site_desc">My personal website — written from scratch in HTML, CSS and JS. Hosted on GitHub Pages.</p>
+<span class="tag" data-i18n="tag_web">Web</span>
 </div>
 
 <div class="card reveal">
 <span class="card-icon">⚙️</span>
-<h3>Dotfiles & Hyprland</h3>
-<p>My Arch Linux setup with Hyprland — custom themes, scripts, configs. All open source on GitHub.</p>
-<span class="tag">Arch Linux</span>
+<h3 data-i18n="about_dotfiles_title">Dotfiles & Hyprland</h3>
+<p data-i18n="about_dotfiles_desc">My Arch Linux setup with Hyprland — custom themes, scripts, configs. All open source on GitHub.</p>
+<span class="tag" data-i18n="tag_arch">Arch Linux</span>
 </div>
 
 </div>
 </section>
 
 <section class="section">
-<h2 class="section-title reveal">Collab Modes</h2>
+<h2 class="section-title reveal" data-i18n="about_collab_title">Collab Modes</h2>
 <hr class="divider reveal">
 <div class="collab-grid">
 
@@ -140,9 +140,9 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 <img src="img/ManKrawiec.jpeg" alt="ManKrawiec" class="duo-avatar" loading="lazy" decoding="async">
 <img src="img/Joel.png" alt="Safigy" class="duo-avatar" loading="lazy" decoding="async">
 </div>
-<h3>Twitch Duo Nights</h3>
-<p>ManKrawiec + Safigy live together: fast FPS, War Thunder chaos, and pure duo energy.</p>
-<a href="https://www.twitch.tv/mankrawiec" target="_blank" rel="noopener noreferrer">▶ Watch the duo on Twitch</a>
+<h3 data-i18n="about_duo_title">Twitch Duo Nights</h3>
+<p data-i18n="about_duo_desc">ManKrawiec + Safigy live together: fast FPS, War Thunder chaos, and pure duo energy.</p>
+<a href="https://www.twitch.tv/mankrawiec" target="_blank" rel="noopener noreferrer" data-i18n="about_duo_link">▶ Watch the duo on Twitch</a>
 </div>
 
 <div class="collab-card reveal">
@@ -150,9 +150,9 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 <img src="img/ManKrawiec.jpeg" alt="ManKrawiec" class="duo-avatar" loading="lazy" decoding="async">
 <img src="img/Jajko.jpeg" alt="JajkoPL" class="duo-avatar" loading="lazy" decoding="async">
 </div>
-<h3>TikTok Clip Combo</h3>
-<p>ManKrawiec + JajkoPL: quick highlights, funny moments and short-form gaming clips.</p>
-<a href="https://www.tiktok.com/@polishmig" target="_blank" rel="noopener noreferrer">🎵 See duo clips on TikTok</a>
+<h3 data-i18n="about_tiktok_title">TikTok Clip Combo</h3>
+<p data-i18n="about_tiktok_desc">ManKrawiec + JajkoPL: quick highlights, funny moments and short-form gaming clips.</p>
+<a href="https://www.tiktok.com/@polishmig" target="_blank" rel="noopener noreferrer" data-i18n="about_tiktok_link">🎵 See duo clips on TikTok</a>
 </div>
 
 <div class="collab-card reveal">
@@ -161,16 +161,16 @@ I often play with my streaming partner <a href="https://www.twitch.tv/safigy" st
 <img src="img/Joel.png" alt="Safigy" class="duo-avatar" loading="lazy" decoding="async">
 <img src="img/Jajko.jpeg" alt="JajkoPL" class="duo-avatar" loading="lazy" decoding="async">
 </div>
-<h3>Full Squad Drop</h3>
-<p>When all three of us jump in, that is where the best moments and funniest voice chat happen.</p>
-<a href="https://discord.gg/8MzyPqCg6n" target="_blank" rel="noopener noreferrer">💬 Join Discord for squad alerts</a>
+<h3 data-i18n="about_squad_title">Full Squad Drop</h3>
+<p data-i18n="about_squad_desc">When all three of us jump in, that is where the best moments and funniest voice chat happen.</p>
+<a href="https://discord.gg/8MzyPqCg6n" target="_blank" rel="noopener noreferrer" data-i18n="about_squad_link">💬 Join Discord for squad alerts</a>
 </div>
 
 </div>
 </section>
 
 <footer>
-<p>&copy; 2026 ManKrawiec. Built with ❤️</p>
+<p data-i18n="footer_built">&copy; 2026 ManKrawiec. Built with ❤️</p>
 </footer>
 
 <script src="stript.js"></script>

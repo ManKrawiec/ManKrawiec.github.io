@@ -1,124 +1,526 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ManKrawiec</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ManKrawiec — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --accent: #00c3ff;
+  --accent-2: #4f46e5;
+  --text: #f5f5f5;
+  --muted: rgba(245, 245, 245, 0.65);
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  --radius: 18px;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 100px 8%;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 18px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+  background: rgba(10, 10, 10, 0.85);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+nav .logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+.lang-toggle {
+  margin-left: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.lang-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(0, 195, 255, 0.15), transparent 70%),
+              radial-gradient(900px 400px at 85% 30%, rgba(79, 70, 229, 0.18), transparent 70%),
+              linear-gradient(160deg, #0c0c0c 0%, #111 40%, #0f0f0f 100%);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  margin-top: 14px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--muted);
+}
+
+.hero .buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 195, 255, 0.25);
+}
+
+.btn.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.skill {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.skill span {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* TERMINAL */
+.terminal {
+  background: #0b0b0b;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #b7ffb7;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal::before {
+  content: '● ● ●';
+  color: #888;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 0.9rem;
+}
+
+.terminal pre {
+  margin-top: 24px;
+  white-space: pre-wrap;
+}
+
+/* CONTACT */
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px 8%;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+</head>
 <body>
 
-<header>
-<div class="logo">ManKrawiec</div>
-<nav>
-<a href="index.html" class="active">Home</a>
-<a href="about.html">About</a>
-<a href="content.html">Content</a>
-<a href="contact.html">Community</a>
+<nav id="navbar">
+  <div class="logo">ManKrawiec</div>
+  <ul>
+    <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+    <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+    <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+  </ul>
+  <button class="lang-toggle" id="lang-toggle" type="button">PL</button>
 </nav>
-</header>
 
-<section class="hero">
-<div class="hero-text">
-<h1 class="fade-in">Streaming. Coding. Creating.</h1>
-<p class="fade-in-delay">Gamer and creator from Poland — I stream War Thunder, love CoD and Battlefield, and build projects in my spare time.</p>
-<div class="fade-in-delay-2">
-<span class="location">🇵🇱 Poland</span>
-</div>
-<div class="buttons fade-in-delay-2">
-<a href="https://www.twitch.tv/mankrawiec" class="primary">▶ Watch Twitch</a>
-<a href="https://discord.gg/8MzyPqCg6n" class="secondary">💬 Join Discord</a>
-</div>
-</div>
-<img src="img/ManKrawiec.jpeg" alt="ManKrawiec" class="hero-avatar fade-in-delay" loading="eager" decoding="async" fetchpriority="high">
+<section class="hero" id="hero">
+  <div class="container reveal">
+    <h1>ManKrawiec</h1>
+    <p data-i18n="hero_sub">Linux • Programming • Projects</p>
+    <div class="buttons">
+      <a href="#projects" class="btn primary" data-i18n="hero_btn_projects">My Projects</a>
+      <a href="https://github.com/ManKrawiec" class="btn secondary" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
 </section>
 
-<section class="scroll-scene">
-<div class="scene-copy reveal">
-<h2>Flight Mode</h2>
-<p>Scroll to see a mini story. The sky shifts, the plane glides, and the horizon moves as you go.</p>
-</div>
-<div class="scene-track" data-scroll-scene>
-<div class="scene-window">
-<div class="scene-canvas">
-<div class="sun"></div>
-<div class="cloud cloud-1"></div>
-<div class="cloud cloud-2"></div>
-<div class="cloud cloud-3"></div>
-<div class="plane" aria-hidden="true">
-<svg viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg" role="presentation">
-<path d="M14 50 L120 50 L210 30 L200 55 L120 60 L14 60 Z" fill="#e7f5ff" opacity="0.92"/>
-<path d="M70 50 L110 20 L130 22 L95 52 Z" fill="#8fe2d7"/>
-<path d="M85 60 L110 84 L122 84 L98 60 Z" fill="#6cc7bf"/>
-<circle cx="160" cy="44" r="6" fill="#f6c453"/>
-</svg>
-</div>
-<div class="horizon"></div>
-</div>
-</div>
-</div>
+<section id="projects">
+  <div class="container reveal">
+    <h2 data-i18n="projects_title">Projects</h2>
+    <div class="projects-grid" style="margin-top:30px;">
+      <div class="card">
+        <h3>Maxis-Linux</h3>
+        <p data-i18n="projects_maxis_desc">Custom Linux distribution. A project from bootloader to a full desktop environment.</p>
+        <a href="https://github.com/ManKrawiec" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+      <div class="card">
+        <h3>Terminal Tools</h3>
+        <p data-i18n="projects_tools_desc">A set of tools and scripts that improve Linux workflows.</p>
+        <a href="https://github.com/ManKrawiec" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+      <div class="card">
+        <h3>Portfolio 2026</h3>
+        <p data-i18n="projects_portfolio_desc">Modern portfolio concept with animations and a minimal UI.</p>
+        <a href="https://github.com/ManKrawiec" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-<h2 class="section-title reveal">What I Do</h2>
-<hr class="divider reveal">
-<div class="cards">
-
-<div class="card reveal">
-<span class="card-icon">🎮</span>
-<h3>Live Streams</h3>
-<p>Watch me play, code and build projects live on Twitch. Interactive streams with the community.</p>
-<a href="https://www.twitch.tv/mankrawiec">Watch now →</a>
-</div>
-
-<div class="card reveal">
-<span class="card-icon">💻</span>
-<h3>Coding Projects</h3>
-<p>Open source projects, tools and experiments. From web apps to system configurations.</p>
-<a href="https://github.com/ManKrawiec">View on GitHub →</a>
-</div>
-
-<div class="card reveal">
-<span class="card-icon">🚀</span>
-<h3>Community</h3>
-<p>Join a growing community of gamers, coders and creators on Discord.</p>
-<a href="https://discord.gg/8MzyPqCg6n">Join Discord →</a>
-</div>
-
-</div>
+<section id="skills">
+  <div class="container reveal">
+    <h2 data-i18n="skills_title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill"><span>Linux</span></div>
+      <div class="skill"><span>Python</span></div>
+      <div class="skill"><span>HTML</span></div>
+      <div class="skill"><span>CSS</span></div>
+      <div class="skill"><span>Git</span></div>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-<h2 class="section-title reveal">Gaming Squad</h2>
-<hr class="divider reveal">
-<div class="buddies">
+<section id="terminal">
+  <div class="container reveal">
+    <h2 data-i18n="terminal_title">Terminal</h2>
+    <div class="terminal">
+      <pre id="terminal-text"></pre>
+    </div>
+  </div>
+</section>
 
-<div class="buddy-section reveal">
-<img src="img/Joel.png" alt="Safigy" class="buddy-avatar" loading="lazy" decoding="async">
-<div class="buddy-info">
-<h3>Safigy</h3>
-<p>My streaming partner. We play War Thunder, Battlefield and whatever else we feel like.</p>
-<a href="https://www.twitch.tv/safigy" target="_blank" rel="noopener noreferrer">🟣 Safigy on Twitch</a>
-</div>
-</div>
-
-<div class="buddy-section reveal">
-<img src="img/Jajko.jpeg" alt="JajkoPL" class="buddy-avatar" loading="lazy" decoding="async">
-<div class="buddy-info">
-<h3>JajkoPL</h3>
-<p>My main War Thunder buddy. We grind together daily, and sometimes team up with Safigy for full squad action.</p>
-<a href="https://www.tiktok.com/@polishmig" target="_blank" rel="noopener noreferrer">🎵 JajkoPL on TikTok</a>
-</div>
-</div>
-
-</div>
+<section id="contact">
+  <div class="container reveal contact">
+    <div>
+      <h2 data-i18n="contact_title">Contact</h2>
+      <p data-i18n="contact_sub">Want to collaborate? Reach out on GitHub.</p>
+    </div>
+    <div>
+      <a href="https://github.com/ManKrawiec" class="btn primary" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:krawczykmako@gmail.com" class="btn secondary" data-i18n="contact_btn">Send a message</a>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p>&copy; 2026 ManKrawiec. Built with ❤️</p>
+  <span data-i18n="footer_index">© 2026 ManKrawiec •</span> <a href="https://github.com/ManKrawiec" target="_blank" rel="noopener" style="color: var(--accent); text-decoration:none;">GitHub</a>
 </footer>
 
-<script src="stript.js"></script>
+<script>
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Language toggle
+const translations = {
+  en: {
+    nav_home: 'Home',
+    nav_projects: 'Projects',
+    nav_skills: 'Skills',
+    nav_contact: 'Contact',
+    hero_sub: 'Linux • Programming • Projects',
+    hero_btn_projects: 'My Projects',
+    projects_title: 'Projects',
+    projects_maxis_desc: 'Custom Linux distribution. A project from bootloader to a full desktop environment.',
+    projects_tools_desc: 'A set of tools and scripts that improve Linux workflows.',
+    projects_portfolio_desc: 'Modern portfolio concept with animations and a minimal UI.',
+    skills_title: 'Skills',
+    terminal_title: 'Terminal',
+    contact_title: 'Contact',
+    contact_sub: 'Want to collaborate? Reach out on GitHub.',
+    contact_btn: 'Send a message',
+    footer_index: '© 2026 ManKrawiec •'
+  },
+  pl: {
+    nav_home: 'Strona główna',
+    nav_projects: 'Projekty',
+    nav_skills: 'Umiejętności',
+    nav_contact: 'Kontakt',
+    hero_sub: 'Linux • Programowanie • Projekty',
+    hero_btn_projects: 'Moje projekty',
+    projects_title: 'Projekty',
+    projects_maxis_desc: 'Autorska dystrybucja Linux. Projekt od bootloadera po własne środowisko.',
+    projects_tools_desc: 'Zestaw narzędzi i skryptów usprawniających pracę w Linuxie.',
+    projects_portfolio_desc: 'Nowoczesny projekt portfolio z animacjami i minimalnym UI.',
+    skills_title: 'Umiejętności',
+    terminal_title: 'Terminal',
+    contact_title: 'Kontakt',
+    contact_sub: 'Chcesz współpracować? Odezwij się na GitHub.',
+    contact_btn: 'Napisz',
+    footer_index: '© 2026 ManKrawiec •'
+  }
+};
+
+const langToggle = document.getElementById('lang-toggle');
+const applyLanguage = (lang) => {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const value = translations[lang] && translations[lang][key];
+    if (value) el.textContent = value;
+  });
+  if (langToggle) langToggle.textContent = lang === 'en' ? 'PL' : 'EN';
+  localStorage.setItem('lang', lang);
+  updateTerminal(lang);
+};
+
+if (langToggle) {
+  langToggle.addEventListener('click', () => {
+    const current = localStorage.getItem('lang') || 'en';
+    applyLanguage(current === 'en' ? 'pl' : 'en');
+  });
+}
+
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+revealEls.forEach(el => revealObserver.observe(el));
+
+// Terminal typing (language-aware)
+const terminalText = document.getElementById('terminal-text');
+const terminalLinesByLang = {
+  en: [
+    'man@maxis:~$ neofetch',
+    'OS: Maxis-Linux',
+    'Host: ManKrawiec',
+    'Kernel: 6.x',
+    '',
+    'man@maxis:~$ git clone https://github.com/ManKrawiec/portfolio',
+    'Cloning into \\'portfolio\\'...',
+    '',
+    'man@maxis:~$ python main.py',
+    'Running project...'
+  ],
+  pl: [
+    'man@maxis:~$ neofetch',
+    'OS: Maxis-Linux',
+    'Host: ManKrawiec',
+    'Kernel: 6.x',
+    '',
+    'man@maxis:~$ git clone https://github.com/ManKrawiec/portfolio',
+    'Klonowanie do \\'portfolio\\'...',
+    '',
+    'man@maxis:~$ python main.py',
+    'Uruchamiam projekt...'
+  ]
+};
+
+let lineIndex = 0;
+let charIndex = 0;
+let typingTimeout = null;
+
+function typeTerminal(lines) {
+  if (!terminalText) return;
+  if (lineIndex >= lines.length) return;
+  const line = lines[lineIndex];
+  if (charIndex < line.length) {
+    terminalText.textContent += line[charIndex];
+    charIndex++;
+  } else {
+    terminalText.textContent += '\n';
+    lineIndex++;
+    charIndex = 0;
+  }
+  typingTimeout = setTimeout(() => typeTerminal(lines), 35);
+}
+
+function updateTerminal(lang) {
+  if (!terminalText) return;
+  if (typingTimeout) clearTimeout(typingTimeout);
+  terminalText.textContent = '';
+  lineIndex = 0;
+  charIndex = 0;
+  const lines = terminalLinesByLang[lang] || terminalLinesByLang.en;
+  typeTerminal(lines);
+}
+
+const initialLang = localStorage.getItem('lang') || 'en';
+applyLanguage(initialLang);
+</script>
 </body>
 </html>

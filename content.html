@@ -12,22 +12,23 @@
 <header>
 <div class="logo">ManKrawiec</div>
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="content.html" class="active">Content</a>
-<a href="contact.html">Community</a>
+<a href="index.html" data-i18n="nav_home">Home</a>
+<a href="about.html" data-i18n="nav_about">About</a>
+<a href="content.html" class="active" data-i18n="nav_content">Content</a>
+<a href="contact.html" data-i18n="nav_community">Community</a>
+<button class="lang-toggle" id="lang-toggle" type="button">PL</button>
 </nav>
 </header>
 
 <section class="hero centered">
 <div class="hero-text">
-<h1 class="fade-in">My Content</h1>
-<p class="fade-in-delay">Games, streams, projects — everything I create in one place.</p>
+<h1 class="fade-in" data-i18n="content_hero_title">My Content</h1>
+<p class="fade-in-delay" data-i18n="content_hero_sub">Games, streams, projects — everything I create in one place.</p>
 </div>
 </section>
 
 <section class="section">
-<h2 class="section-title reveal">What I Play</h2>
+<h2 class="section-title reveal" data-i18n="content_play_title">What I Play</h2>
 <hr class="divider reveal">
 <div class="cards">
 
@@ -35,8 +36,8 @@
 <img src="img/warthunder.jpg" alt="War Thunder" loading="lazy" decoding="async">
 <div class="card-body">
 <h3>War Thunder</h3>
-<p>My main game on stream. Tanks, planes, ships — the grind goes on, but the frags are worth it.</p>
-<span class="tag">Main Game</span>
+<p data-i18n="content_wt_desc">My main game on stream. Tanks, planes, ships — the grind goes on, but the frags are worth it.</p>
+<span class="tag" data-i18n="tag_main_game">Main Game</span>
 <span class="tag orange">MMO</span>
 </div>
 </div>
@@ -45,9 +46,9 @@
 <img src="img/cod.webp" alt="Call of Duty" loading="lazy" decoding="async">
 <div class="card-body">
 <h3>Call of Duty</h3>
-<p>One of my favorite series. From campaigns to multiplayer — a true FPS classic.</p>
+<p data-i18n="content_cod_desc">One of my favorite series. From campaigns to multiplayer — a true FPS classic.</p>
 <span class="tag purple">FPS</span>
-<span class="tag">Favorite Series</span>
+<span class="tag" data-i18n="tag_favorite_series">Favorite Series</span>
 </div>
 </div>
 
@@ -55,9 +56,9 @@
 <img src="img/battlefield.webp" alt="Battlefield" loading="lazy" decoding="async">
 <div class="card-body">
 <h3>Battlefield</h3>
-<p>Massive maps, destruction, vehicles. Battlefield is the definition of an epic gaming moment.</p>
+<p data-i18n="content_bf_desc">Massive maps, destruction, vehicles. Battlefield is the definition of an epic gaming moment.</p>
 <span class="tag purple">FPS</span>
-<span class="tag orange">Large Scale</span>
+<span class="tag orange" data-i18n="tag_large_scale">Large Scale</span>
 </div>
 </div>
 
@@ -65,71 +66,71 @@
 </section>
 
 <section class="section">
-<h2 class="section-title reveal">Content Drops</h2>
+<h2 class="section-title reveal" data-i18n="content_drops_title">Content Drops</h2>
 <hr class="divider reveal">
 <div class="cards">
 
 <div class="card reveal">
 <span class="card-icon">🟣</span>
-<h3>Twitch: Duo with Safigy</h3>
-<p>Long live sessions with high-energy matches, chill banter and squad-level chaos.</p>
-<a href="https://www.twitch.tv/mankrawiec" target="_blank" rel="noopener noreferrer">Watch on Twitch →</a>
+<h3 data-i18n="content_twitch_title">Twitch: Duo with Safigy</h3>
+<p data-i18n="content_twitch_desc">Long live sessions with high-energy matches, chill banter and squad-level chaos.</p>
+<a href="https://www.twitch.tv/mankrawiec" target="_blank" rel="noopener noreferrer" data-i18n="content_twitch_link">Watch on Twitch →</a>
 </div>
 
 <div class="card reveal">
 <span class="card-icon">🎵</span>
-<h3>TikTok: Clips with JajkoPL</h3>
-<p>Short clips packed with highlights and funny moments from our sessions.</p>
-<a href="https://www.tiktok.com/@polishmig" target="_blank" rel="noopener noreferrer">Open TikTok →</a>
+<h3 data-i18n="content_tiktok_title">TikTok: Clips with JajkoPL</h3>
+<p data-i18n="content_tiktok_desc">Short clips packed with highlights and funny moments from our sessions.</p>
+<a href="https://www.tiktok.com/@polishmig" target="_blank" rel="noopener noreferrer" data-i18n="content_tiktok_link">Open TikTok →</a>
 </div>
 
 <div class="card reveal">
 <span class="card-icon">🔥</span>
-<h3>Special: Full Squad Nights</h3>
-<p>Big sessions with me, Safigy and JajkoPL. Announcements drop first on Discord.</p>
-<a href="https://discord.gg/8MzyPqCg6n" target="_blank" rel="noopener noreferrer">Get alerts on Discord →</a>
+<h3 data-i18n="content_squad_title">Special: Full Squad Nights</h3>
+<p data-i18n="content_squad_desc">Big sessions with me, Safigy and JajkoPL. Announcements drop first on Discord.</p>
+<a href="https://discord.gg/8MzyPqCg6n" target="_blank" rel="noopener noreferrer" data-i18n="content_squad_link">Get alerts on Discord →</a>
 </div>
 
 </div>
 </section>
 
 <section class="section">
-<h2 class="section-title reveal">Projects</h2>
+<h2 class="section-title reveal" data-i18n="content_projects_title">Projects</h2>
 <hr class="divider reveal">
 <div class="cards">
 
 <div class="image-card reveal">
 <div class="img-placeholder linexin">
 🐧
-<span class="placeholder-text">Linexin</span>
+<span class="placeholder-text">Maxis-Linux</span>
 </div>
 <div class="card-body">
-<h3>Linexin — Linux Distro</h3>
-<p>My own Linux distribution, Maxis-Linux. A project in progress — tons of learning from bootloader to desktop environment.</p>
-<span class="tag">Linux</span>
-<span class="tag purple">In Progress</span>
+<h3 data-i18n="content_maxis_title">Maxis-Linux — Linux Distro</h3>
+<p data-i18n="content_maxis_desc">My own Linux distribution, Maxis-Linux. A project in progress — tons of learning from bootloader to desktop environment.</p>
+<span class="tag" data-i18n="tag_linux">Linux</span>
+<span class="tag purple" data-i18n="tag_in_progress">In Progress</span>
 </div>
 </div>
 
 <div class="card reveal">
 <span class="card-icon">⚙️</span>
-<h3>Arch + Hyprland Dotfiles</h3>
-<p>My custom setup — themes, scripts, configs. All open source on GitHub.</p>
-<a href="https://github.com/ManKrawiec">GitHub →</a>
+<h3 data-i18n="content_dotfiles_title">Arch + Hyprland Dotfiles</h3>
+<p data-i18n="content_dotfiles_desc">My custom setup — themes, scripts, configs. All open source on GitHub.</p>
+<a href="https://github.com/ManKrawiec" data-i18n="link_github_arrow">GitHub →</a>
 </div>
 
 <div class="card reveal">
 <span class="card-icon">🌐</span>
-<h3>ManKrawiec.github.io</h3>
-<p>This website — built from scratch in HTML, CSS and JS. No frameworks, pure web dev.</p>
-<a href="https://github.com/ManKrawiec/ManKrawiec.github.io">Source →</a>
+<h3 data-i18n="content_site_title">ManKrawiec.github.io</h3>
+<p data-i18n="content_site_desc">This website — built from scratch in HTML, CSS and JS. No frameworks, pure web dev.</p>
+<a href="https://github.com/ManKrawiec/ManKrawiec.github.io" data-i18n="link_source_arrow">Source →</a>
 </div>
 
 </div>
 </section>
 
 <footer>
-<p>&copy; 2026 ManKrawiec. Built with ❤️</p>
+<p data-i18n="footer_built">&copy; 2026 ManKrawiec. Built with ❤️</p>
 </footer>
 
 <script src="stript.js"></script>

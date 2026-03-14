@@ -12,22 +12,23 @@
 <header>
 <div class="logo">ManKrawiec</div>
 <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="content.html">Content</a>
-<a href="contact.html" class="active">Community</a>
+<a href="index.html" data-i18n="nav_home">Home</a>
+<a href="about.html" data-i18n="nav_about">About</a>
+<a href="content.html" data-i18n="nav_content">Content</a>
+<a href="contact.html" class="active" data-i18n="nav_community">Community</a>
+<button class="lang-toggle" id="lang-toggle" type="button">PL</button>
 </nav>
 </header>
 
 <section class="hero centered">
 <div class="hero-text">
-<h1 class="fade-in">Join the Community</h1>
-<p class="fade-in-delay">Find me across the internet — let's connect!</p>
+<h1 class="fade-in" data-i18n="contact_hero_title">Join the Community</h1>
+<p class="fade-in-delay" data-i18n="contact_hero_sub">Find me across the internet — let's connect!</p>
 </div>
 </section>
 
 <section class="section">
-<h2 class="section-title reveal">Find Me Here</h2>
+<h2 class="section-title reveal" data-i18n="contact_find_title">Find Me Here</h2>
 <hr class="divider reveal">
 
 <div class="social-grid">
@@ -36,7 +37,7 @@
 <span class="social-icon">🟣</span>
 <div>
 <div class="social-name">Twitch</div>
-<div class="social-desc">Watch me stream live</div>
+<div class="social-desc" data-i18n="contact_twitch_desc">Watch me stream live</div>
 </div>
 </a>
 
@@ -44,7 +45,7 @@
 <span class="social-icon">⚫</span>
 <div>
 <div class="social-name">GitHub</div>
-<div class="social-desc">Open source projects & code</div>
+<div class="social-desc" data-i18n="contact_github_desc">Open source projects & code</div>
 </div>
 </a>
 
@@ -52,7 +53,7 @@
 <span class="social-icon">🔵</span>
 <div>
 <div class="social-name">Discord</div>
-<div class="social-desc">Chat with the community</div>
+<div class="social-desc" data-i18n="contact_discord_desc">Chat with the community</div>
 </div>
 </a>
 
@@ -60,7 +61,7 @@
 </section>
 
 <footer>
-<p>&copy; 2026 ManKrawiec. Built with ❤️</p>
+<p data-i18n="footer_built">&copy; 2026 ManKrawiec. Built with ❤️</p>
 </footer>
 
 <script src="stript.js"></script>
