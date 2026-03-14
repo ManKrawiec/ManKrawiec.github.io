@@ -420,28 +420,49 @@ footer {
   <div class="container reveal">
     <h2 data-i18n="projects_title">Projects</h2>
     <div class="projects-grid" style="margin-top:30px;">
-      <div class="image-card">
-        <img src="img/warthunder.jpg" alt="Maxis-Linux preview" loading="lazy" decoding="async">
-        <div class="card-body">
+      <div class="card">
         <h3>Maxis-Linux</h3>
         <p data-i18n="projects_maxis_desc">Custom Linux distribution. A project from bootloader to a full desktop environment.</p>
         <a href="https://github.com/ManKrawiec" target="_blank" rel="noopener">GitHub →</a>
-        </div>
       </div>
-      <div class="image-card">
-        <img src="img/battlefield.webp" alt="Terminal tools preview" loading="lazy" decoding="async">
-        <div class="card-body">
+      <div class="card">
         <h3>Terminal Tools</h3>
         <p data-i18n="projects_tools_desc">A set of tools and scripts that improve Linux workflows.</p>
         <a href="https://github.com/ManKrawiec" target="_blank" rel="noopener">GitHub →</a>
-        </div>
       </div>
-      <div class="image-card">
-        <img src="img/cod.webp" alt="Portfolio 2026 preview" loading="lazy" decoding="async">
-        <div class="card-body">
+      <div class="card">
         <h3>Portfolio 2026</h3>
         <p data-i18n="projects_portfolio_desc">Modern portfolio concept with animations and a minimal UI.</p>
         <a href="https://github.com/ManKrawiec" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="games">
+  <div class="container reveal">
+    <h2 data-i18n="games_title">Games</h2>
+    <p data-i18n="games_sub" style="color: var(--muted);">The titles I stream and grind the most.</p>
+    <div class="projects-grid" style="margin-top:30px;">
+      <div class="image-card">
+        <img src="img/warthunder.jpg" alt="War Thunder" loading="lazy" decoding="async">
+        <div class="card-body">
+          <h3>War Thunder</h3>
+          <p data-i18n="games_wt_desc">Tanks, planes and ships — the grind never ends.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="img/cod.webp" alt="Call of Duty" loading="lazy" decoding="async">
+        <div class="card-body">
+          <h3>Call of Duty</h3>
+          <p data-i18n="games_cod_desc">Fast action and classic FPS vibes.</p>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="img/battlefield.webp" alt="Battlefield" loading="lazy" decoding="async">
+        <div class="card-body">
+          <h3>Battlefield</h3>
+          <p data-i18n="games_bf_desc">Large-scale battles, vehicles and chaos.</p>
         </div>
       </div>
     </div>
@@ -547,7 +568,12 @@ const translations = {
     team_title: 'Squad',
     team_sub: 'Streaming and gaming partners I roll with the most.',
     team_safigy_desc: 'Duo partner for War Thunder and FPS chaos.',
-    team_jajko_desc: 'Highlights, clips and squad nights.'
+    team_jajko_desc: 'Highlights, clips and squad nights.',
+    games_title: 'Games',
+    games_sub: 'The titles I stream and grind the most.',
+    games_wt_desc: 'Tanks, planes and ships — the grind never ends.',
+    games_cod_desc: 'Fast action and classic FPS vibes.',
+    games_bf_desc: 'Large-scale battles, vehicles and chaos.'
   },
   pl: {
     nav_home: 'Strona główna',
@@ -569,7 +595,12 @@ const translations = {
     team_title: 'Ekipa',
     team_sub: 'Partnerzy do streamów i grania, z którymi najczęściej lecę.',
     team_safigy_desc: 'Duo partner do War Thunder i FPS-owego chaosu.',
-    team_jajko_desc: 'Highlighty, klipy i squad nights.'
+    team_jajko_desc: 'Highlighty, klipy i squad nights.',
+    games_title: 'Gry',
+    games_sub: 'Tytuły, które najczęściej streamuję i ogrywam.',
+    games_wt_desc: 'Czołgi, samoloty i okręty — grind się nie kończy.',
+    games_cod_desc: 'Szybka akcja i klasyczny klimat FPS.',
+    games_bf_desc: 'Bitwy na dużą skalę, pojazdy i chaos.'
   }
 };
 
