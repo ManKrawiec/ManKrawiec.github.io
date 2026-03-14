@@ -29,12 +29,27 @@ html {
 
 body {
     font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-    background: radial-gradient(1200px 500px at 15% 10%, rgba(79, 209, 197, 0.08), transparent 70%),
-        radial-gradient(900px 400px at 85% 20%, rgba(246, 196, 83, 0.08), transparent 70%),
-        linear-gradient(180deg, var(--bg-0), var(--bg-2));
+    background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(79, 209, 197, 0.18), transparent 60%),
+        radial-gradient(900px 600px at 95% 5%, rgba(246, 196, 83, 0.14), transparent 58%),
+        radial-gradient(800px 600px at 70% 85%, rgba(123, 216, 143, 0.14), transparent 60%),
+        linear-gradient(160deg, #0a0e13 0%, #101923 45%, #0c1219 100%);
     color: var(--text-1);
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: -20%;
+    pointer-events: none;
+    background:
+        conic-gradient(from 120deg at 20% 20%, rgba(79, 209, 197, 0.08), transparent 30%, rgba(246, 196, 83, 0.08), transparent 60%, rgba(123, 216, 143, 0.08), transparent 80%),
+        repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 10px);
+    mix-blend-mode: screen;
+    opacity: 0.6;
+    z-index: -2;
 }
 
 body::after {
@@ -42,8 +57,11 @@ body::after {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background-image: linear-gradient(transparent 0%, rgba(255, 255, 255, 0.015) 50%, transparent 100%);
-    opacity: 0.5;
+    background-image:
+        radial-gradient(700px 400px at 15% 15%, rgba(255, 255, 255, 0.04), transparent 70%),
+        radial-gradient(600px 380px at 90% 25%, rgba(255, 255, 255, 0.03), transparent 70%),
+        linear-gradient(transparent 0%, rgba(255, 255, 255, 0.02) 50%, transparent 100%);
+    opacity: 0.55;
     z-index: -1;
 }
 
@@ -678,6 +696,147 @@ nav a.active::after {
     margin-top: 16px;
 }
 
+/* === SCROLL SCENE === */
+.scroll-scene {
+    padding: 120px 8% 80px;
+    display: grid;
+    gap: 38px;
+}
+
+.scene-copy h2 {
+    font-family: 'Bricolage Grotesque', 'IBM Plex Sans', sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.scene-copy p {
+    color: var(--text-2);
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.scene-track {
+    --scene-progress: 0;
+    min-height: 160vh;
+    position: relative;
+}
+
+.scene-window {
+    position: sticky;
+    top: 18vh;
+    border-radius: 28px;
+    padding: 18px;
+    background: rgba(10, 14, 19, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(16px);
+}
+
+.scene-canvas {
+    position: relative;
+    height: 360px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0d1b2a 0%, #16334a 45%, #1b2b3a 100%);
+}
+
+.scene-canvas::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(700px 260px at 20% 20%, rgba(79, 209, 197, 0.2), transparent 70%);
+    opacity: calc(0.2 + (0.5 * var(--scene-progress)));
+    pointer-events: none;
+}
+
+.sun {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #f9de8e 0%, rgba(246, 196, 83, 0.2) 70%);
+    top: calc(20px + (60px * var(--scene-progress)));
+    left: calc(60% + (120px * var(--scene-progress)));
+    opacity: calc(0.6 + (0.4 * var(--scene-progress)));
+    filter: blur(1px);
+}
+
+.cloud {
+    position: absolute;
+    width: 140px;
+    height: 42px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.65);
+    filter: blur(0.4px);
+    opacity: 0.7;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 48px;
+    height: 48px;
+    top: -20px;
+    left: 16px;
+}
+
+.cloud::after {
+    width: 60px;
+    height: 60px;
+    top: -28px;
+    right: 18px;
+}
+
+.cloud-1 {
+    top: 60px;
+    left: calc(-30px + (240px * var(--scene-progress)));
+    opacity: 0.6;
+}
+
+.cloud-2 {
+    top: 120px;
+    left: calc(200px + (140px * var(--scene-progress)));
+    opacity: 0.5;
+}
+
+.cloud-3 {
+    top: 40px;
+    left: calc(420px + (200px * var(--scene-progress)));
+    opacity: 0.45;
+}
+
+.plane {
+    position: absolute;
+    width: 220px;
+    height: 90px;
+    top: calc(140px - (60px * var(--scene-progress)));
+    left: calc(20px + (360px * var(--scene-progress)));
+    transform: rotate(calc(-6deg + (12deg * var(--scene-progress))));
+    filter: drop-shadow(0 18px 24px rgba(9, 14, 20, 0.45));
+    transition: transform 0.15s ease-out;
+}
+
+.plane svg {
+    width: 100%;
+    height: 100%;
+}
+
+.horizon {
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    bottom: -30px;
+    height: 160px;
+    background: linear-gradient(180deg, rgba(27, 55, 74, 0.9) 0%, rgba(10, 14, 19, 1) 85%);
+    transform: translateY(calc(10px + (30px * var(--scene-progress))));
+}
+
 /* === FOOTER === */
 footer {
     text-align: center;
@@ -753,6 +912,14 @@ footer a:hover {
     .buttons {
         justify-content: center;
     }
+
+    .scene-window {
+        top: 12vh;
+    }
+
+    .scene-canvas {
+        height: 320px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -788,5 +955,22 @@ footer a:hover {
     .cards,
     .social-grid {
         grid-template-columns: 1fr;
+    }
+
+    .scroll-scene {
+        padding: 90px 6% 60px;
+    }
+
+    .plane {
+        left: calc(10px + (260px * var(--scene-progress)));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .plane,
+    .horizon,
+    .cloud,
+    .sun {
+        transition: none;
     }
 }

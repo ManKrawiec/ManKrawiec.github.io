@@ -52,3 +52,39 @@ document.querySelectorAll('img').forEach((img) => {
         img.src = imageFallback(img.alt);
     });
 });
+
+// Scroll-driven scene animation
+const scrollScenes = document.querySelectorAll('[data-scroll-scene]');
+if (scrollScenes.length) {
+    let ticking = false;
+
+    const updateScenes = () => {
+        scrollScenes.forEach((scene) => {
+            const rect = scene.getBoundingClientRect();
+            const viewH = window.innerHeight || document.documentElement.clientHeight;
+            const total = rect.height - viewH;
+            let progress = 0;
+
+            if (total > 0) {
+                const scrolled = Math.min(Math.max(-rect.top, 0), total);
+                progress = scrolled / total;
+            } else {
+                progress = rect.top < 0 ? 1 : 0;
+            }
+
+            scene.style.setProperty('--scene-progress', progress.toFixed(4));
+        });
+        ticking = false;
+    };
+
+    const requestUpdate = () => {
+        if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateScenes);
+        }
+    };
+
+    updateScenes();
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate);
+}
