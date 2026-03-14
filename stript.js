@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 // Scroll reveal with a safe fallback for older browsers
 const revealElements = document.querySelectorAll('.reveal');
 
