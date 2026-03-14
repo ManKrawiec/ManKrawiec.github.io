@@ -35,13 +35,34 @@ if (header) {
     window.addEventListener('scroll', updateHeaderState, { passive: true });
 }
 
+const homeNav = document.getElementById('navbar');
+if (homeNav) {
+    const updateHomeNav = () => {
+        if (window.scrollY > 20) {
+            homeNav.classList.add('scrolled');
+        } else {
+            homeNav.classList.remove('scrolled');
+        }
+    };
+    updateHomeNav();
+    window.addEventListener('scroll', updateHomeNav, { passive: true });
+}
+
 // Language toggle (EN default)
 const translations = {
     en: {
         nav_home: 'Home',
+        nav_projects: 'Projects',
+        nav_skills: 'Skills',
+        nav_contact: 'Contact',
         nav_about: 'About',
         nav_content: 'Content',
         nav_community: 'Community',
+        hero_sub: 'Linux • Programming • Projects',
+        hero_btn_projects: 'Projects',
+        hero_btn_github: 'GitHub',
+        projects_title: 'Projects',
+        projects_sub: 'Selected builds focused on Linux, automation, and clean UI.',
         tag_main_game: 'Main Game',
         tag_favorite_series: 'Favorite Series',
         tag_large_scale: 'Large Scale',
@@ -52,7 +73,12 @@ const translations = {
         tag_linux: 'Linux',
         link_github_arrow: 'GitHub →',
         link_source_arrow: 'Source →',
+        skills_title: 'Skills',
+        skills_sub: 'Core technologies I use daily.',
+        terminal_title: 'Terminal',
+        terminal_sub: 'Type a command to explore the Arch Linux vibe.',
         footer_built: '© 2026 ManKrawiec. Built with ❤️',
+        footer_index: '© 2026 ManKrawiec',
         about_hero_title: 'About Me',
         about_hero_sub: 'Gamer, streamer and creator from Poland — I live for games, code and community.',
         about_location: '🇵🇱 Poland',
@@ -110,13 +136,24 @@ const translations = {
         contact_find_title: 'Find Me Here',
         contact_twitch_desc: 'Watch me stream live',
         contact_github_desc: 'Open source projects & code',
-        contact_discord_desc: 'Chat with the community'
+        contact_discord_desc: 'Chat with the community',
+        contact_title: 'Contact',
+        contact_sub: 'Want to collaborate? Reach out on GitHub.',
+        contact_btn: 'Email'
     },
     pl: {
         nav_home: 'Strona główna',
+        nav_projects: 'Projekty',
+        nav_skills: 'Umiejętności',
+        nav_contact: 'Kontakt',
         nav_about: 'O mnie',
         nav_content: 'Treści',
         nav_community: 'Społeczność',
+        hero_sub: 'Linux • Programowanie • Projekty',
+        hero_btn_projects: 'Projekty',
+        hero_btn_github: 'GitHub',
+        projects_title: 'Projekty',
+        projects_sub: 'Wybrane projekty skupione na Linuxie, automatyzacji i czystym UI.',
         tag_main_game: 'Główna gra',
         tag_favorite_series: 'Ulubiona seria',
         tag_large_scale: 'Na dużą skalę',
@@ -127,7 +164,12 @@ const translations = {
         tag_linux: 'Linux',
         link_github_arrow: 'GitHub →',
         link_source_arrow: 'Źródło →',
+        skills_title: 'Umiejętności',
+        skills_sub: 'Technologie, których używam na co dzień.',
+        terminal_title: 'Terminal',
+        terminal_sub: 'Wpisz komendę, żeby poczuć klimat Arch Linux.',
         footer_built: '© 2026 ManKrawiec. Zbudowane z ❤️',
+        footer_index: '© 2026 ManKrawiec',
         about_hero_title: 'O mnie',
         about_hero_sub: 'Gracz, streamer i twórca z Polski — żyję grami, kodem i społecznością.',
         about_location: '🇵🇱 Polska',
@@ -185,7 +227,10 @@ const translations = {
         contact_find_title: 'Znajdziesz mnie tutaj',
         contact_twitch_desc: 'Oglądaj moje live streamy',
         contact_github_desc: 'Open source i kod',
-        contact_discord_desc: 'Pogadaj ze społecznością'
+        contact_discord_desc: 'Pogadaj ze społecznością',
+        contact_title: 'Kontakt',
+        contact_sub: 'Chcesz współpracować? Odezwij się na GitHub.',
+        contact_btn: 'Email'
     }
 };
 
@@ -208,8 +253,70 @@ if (langToggle) {
     });
 }
 
-const initialLang = localStorage.getItem('lang') || 'en';
+const initialLang = localStorage.getItem('lang') || 'pl';
 applyLanguage(initialLang);
+
+// Interactive terminal (home page)
+const terminalRoot = document.querySelector('[data-terminal]');
+const terminalOutput = document.getElementById('terminal-output');
+const terminalInput = document.getElementById('terminal-input');
+
+if (terminalRoot && terminalOutput && terminalInput) {
+    const PROMPT = 'mankrawiec@arch:~$';
+    const outputLines = ['Type \"help\" to list commands.'];
+
+    const renderOutput = () => {
+        terminalOutput.textContent = outputLines.join('\\n');
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    };
+
+    const runCommand = (raw) => {
+        const command = raw.trim();
+        if (!command) return;
+        outputLines.push(`${PROMPT} ${command}`);
+
+        if (command === 'help') {
+            outputLines.push('Available commands:');
+            outputLines.push('help');
+            outputLines.push('fastfetch');
+            outputLines.push('clear');
+        } else if (command === 'fastfetch') {
+            outputLines.push('    /\\');
+            outputLines.push('   /  \\');
+            outputLines.push('  /\\   \\');
+            outputLines.push(' /      \\');
+            outputLines.push('/   ,,   \\');
+            outputLines.push('/   |  |  -');
+            outputLines.push(\"/*-''    ''-*\");
+            outputLines.push('');
+            outputLines.push('User: ManKrawiec');
+            outputLines.push('OS: Arch Linux');
+            outputLines.push('Shell: bash');
+            outputLines.push('Editor: neovim');
+            outputLines.push('Languages: Python, HTML, CSS');
+            outputLines.push('Interests: Linux, programming, projects');
+        } else if (command === 'clear') {
+            outputLines.length = 0;
+        } else {
+            outputLines.push(`Command not found: ${command}`);
+        }
+    };
+
+    terminalInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            const value = terminalInput.value;
+            terminalInput.value = '';
+            runCommand(value);
+            renderOutput();
+        }
+    });
+
+    terminalRoot.addEventListener('click', () => {
+        terminalInput.focus();
+    });
+
+    renderOutput();
+}
 
 // Image fallback in case any asset fails to load
 const imageFallback = (label) => {
