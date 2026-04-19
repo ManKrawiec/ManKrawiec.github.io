@@ -242,7 +242,7 @@ const applyLanguage = (lang) => {
         const value = translations[lang] && translations[lang][key];
         if (value) el.textContent = value;
     });
-    if (langToggle) langToggle.textContent = lang === 'en' ? 'PL' : 'EN';
+    if (langToggle) langToggle.textContent = lang === 'en' ? 'EN' : 'PL';
     localStorage.setItem('lang', lang);
 };
 
@@ -253,7 +253,7 @@ if (langToggle) {
     });
 }
 
-const initialLang = localStorage.getItem('lang') || 'pl';
+const initialLang = localStorage.getItem('lang') || 'en';
 applyLanguage(initialLang);
 
 // Interactive terminal (home page)
@@ -266,7 +266,7 @@ if (terminalRoot && terminalOutput && terminalInput) {
     const outputLines = ['Type \"help\" to list commands.'];
 
     const renderOutput = () => {
-        terminalOutput.textContent = outputLines.join('\\n');
+        terminalOutput.textContent = outputLines.join('\n');
         terminalOutput.scrollTop = terminalOutput.scrollHeight;
     };
 
@@ -281,13 +281,13 @@ if (terminalRoot && terminalOutput && terminalInput) {
             outputLines.push('fastfetch');
             outputLines.push('clear');
         } else if (command === 'fastfetch') {
-            outputLines.push('    /\\');
-            outputLines.push('   /  \\');
-            outputLines.push('  /\\   \\');
-            outputLines.push(' /      \\');
-            outputLines.push('/   ,,   \\');
-            outputLines.push('/   |  |  -');
-            outputLines.push(\"/*-''    ''-*\");
+            outputLines.push('      /\\');
+            outputLines.push('     /  \\');
+            outputLines.push('    /\\   \\');
+            outputLines.push('   /      \\');
+            outputLines.push('  /   ,,   \\');
+            outputLines.push(' /   |  |  -\\');
+            outputLines.push('/_-\'\'    \'\'-_\\');
             outputLines.push('');
             outputLines.push('User: ManKrawiec');
             outputLines.push('OS: Arch Linux');
