@@ -1248,8 +1248,9 @@ footer a:hover {
     margin-top: 28px;
     white-space: pre-wrap;
     min-height: 160px;
-    max-height: 260px;
+    max-height: 270px;
     overflow-y: auto;
+    scrollbar-width: none;
     padding-right: 4px;
 }
 
